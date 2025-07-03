@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>HFS /202402/images/</title>
+	<link rel="stylesheet" href="/?mode=section&id=style.css" type="text/css">
+    <script type="text/javascript" src="/?mode=jquery"></script>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<style class='trash-me'>
+	.onlyscript, button[onclick] { display:none; }
+	</style>
+    <script>
+    // this object will store some %symbols% in the javascript space, so that libs can read them
+    HFS = { folder:'/202402/images/', number:39, paged:1 }; 
+    </script>
+	<script type="text/javascript" src="/?mode=section&id=lib.js"></script>
+</head>
+<body>
+<!-- -->
+<div id='panel'>
+    	<fieldset id='msgs'>
+		<legend><img src="/~img10"> Messages</legend>
+		<ul style='padding-left:2em'>
+		</ul>
+	</fieldset>
+
+    	<fieldset id='login'>
+		<legend><img src="/~img27"> User</legend>
+		<center>
+		<a href="~login">Login</a>
+		</center>
+	</fieldset>                                       
+
+    	<fieldset id='folder'>
+		<legend><img src="/~img8"> Folder</legend>
+
+       <div style='float:right; position:relative; top:-1em; font-weight:bold;'>
+		<a href=".."><img src="/~img14"> Up</a>
+		</div>
+
+		<div id='breadcrumbs'>
+		
+		<a href="/"  /> <img src="/~img1"> Home</a><a href="/202402/" style='padding-left:1.4em;' /> &raquo; 202402</a><a href="/202402/images/" style='padding-left:2.1em;' /> &raquo; images</a>
+       </div>
+        
+		<div id='folder-stats'>0 folders, 39 files, 6.8 MBytes
+		</div>
+		
+		
+	</fieldset>
+
+    	<fieldset id='search'>
+		<legend><img src="/~img3"> Search</legend>
+		<form style='text-align:center'>
+			<input name='search' size='15' value="">
+			<input type='submit' value="go">
+		</form>
+		<div style='margin-top:0.5em;' class='hidden popup'>
+			<fieldset>
+				<legend>Where to search</legend>
+					<input type='radio' name='where' value='fromhere' checked='true' />  this folder and sub-folders
+					<br><input type='radio' name='where' value='here' />  this folder only
+					<br><input type='radio' name='where' value='anywhere' />  entire server
+			</fieldset>
+		</div>
+	</fieldset>
+
+    	<fieldset id='select' class='onlyscript'>
+		<legend><img src="/~img15"> Select</legend>
+		<center>
+    	<button onclick="
+            var x = $('#files .selector');
+            if (x.size() > x.filter(':checked').size())
+                x.attr('checked', true).closest('tr').addClass('selected');
+			else
+                x.attr('checked', false).closest('tr').removeClass('selected');
+			selectedChanged();
+			">All</button>
+    	<button onclick="
+            $('#files .selector').attr('checked', function(i,v){ return !v }).closest('tr').toggleClass('selected');
+			selectedChanged();
+            ">Invert</button>
+    	<button onclick='selectionMask.call(this)'>Mask</button>
+		<p style='display:none; margin-top:1em;'><span id='selected-number'>0</span> items selected</p>
+		</center>
+	</fieldset>
+
+    	
+
+    	<fieldset id='actions'>
+		<legend><img src="/~img18"> Actions</legend>
+		<center>
+		
+		
+		
+		
+		<button id='archiveBtn' onclick='if (confirm("Are you sure?")) submit({}, "/202402/images/?mode=archive&recursive")'>Archive</button>
+		<a href="/202402/images/?tpl=list&folders-filter=\&recursive">Get list</a>
+		</center>
+	</fieldset>
+
+    	<fieldset id='serverinfo'>
+		<legend><img src="/~img0"> Server information</legend>
+		<a href="http://www.rejetto.com/hfs/">HttpFileServer 2.3m</a>
+		<br />Server time: 2024/4/19 上午 08:37:06
+		<br />Server uptime: 00:02:53
+	</fieldset>
+
+
+</div>
+
+<div id='files_outer'>
+	<div style='height:1.6em;'></div>  
+	
+        <form method='post'>
+            <table id='files'>
+             
+            <th><a href="/202402/images/?sort=n">Name</a><a href="/202402/images/?sort=e">.extension</a>
+            <th><a href="/202402/images/?sort=s">Size</a>
+            <th><a href="/202402/images/?sort=t">Timestamp</a>
+            <th><a href="/202402/images/?sort=d">Hits</a>
+            	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="bg01.png"  />
+		
+		
+		<a href="bg01.png"><img src="/~img43"> bg01.png</a>
+		
+		
+<td>852.5 KB<td>2023/10/16 上午 09:49:44<td>3
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake_bg.avif"  />
+		
+		
+		<a href="cake_bg.avif"><img src="/~img43"> cake_bg.avif</a>
+		
+		
+<td>177.3 KB<td>2023/10/2 下午 02:05:54<td>10
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake_bg01.avif"  />
+		
+		
+		<a href="cake_bg01.avif"><img src="/~img43"> cake_bg01.avif</a>
+		
+		
+<td>411.3 KB<td>2023/10/2 下午 02:08:47<td>12
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake_bg02.avif"  />
+		
+		
+		<a href="cake_bg02.avif"><img src="/~img43"> cake_bg02.avif</a>
+		
+		
+<td>273.6 KB<td>2023/10/2 下午 02:09:17<td>11
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake_store01.jpg"  />
+		
+		
+		<a href="cake_store01.jpg"><img src="/~img43"> cake_store01.jpg</a>
+		
+		
+<td>128.7 KB<td>2024/4/8 上午 10:42:04<td>6
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake01.avif"  />
+		
+		
+		<a href="cake01.avif"><img src="/~img43"> cake01.avif</a>
+		
+		
+<td>58.2 KB<td>2023/8/4 下午 01:36:01<td>19
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake02.avif"  />
+		
+		
+		<a href="cake02.avif"><img src="/~img43"> cake02.avif</a>
+		
+		
+<td>161.1 KB<td>2023/8/4 下午 01:36:15<td>18
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake03.avif"  />
+		
+		
+		<a href="cake03.avif"><img src="/~img43"> cake03.avif</a>
+		
+		
+<td>96.8 KB<td>2023/8/4 下午 01:36:43<td>18
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake04.avif"  />
+		
+		
+		<a href="cake04.avif"><img src="/~img43"> cake04.avif</a>
+		
+		
+<td>84.5 KB<td>2023/10/2 下午 02:05:08<td>19
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake05.avif"  />
+		
+		
+		<a href="cake05.avif"><img src="/~img43"> cake05.avif</a>
+		
+		
+<td>154.0 KB<td>2023/10/2 下午 02:05:15<td>18
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake06.avif"  />
+		
+		
+		<a href="cake06.avif"><img src="/~img43"> cake06.avif</a>
+		
+		
+<td>163.0 KB<td>2023/10/2 下午 02:05:41<td>6
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake07.avif"  />
+		
+		
+		<a href="cake07.avif"><img src="/~img43"> cake07.avif</a>
+		
+		
+<td>236.9 KB<td>2023/10/2 下午 02:06:08<td>6
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake08.avif"  />
+		
+		
+		<a href="cake08.avif"><img src="/~img43"> cake08.avif</a>
+		
+		
+<td>67.2 KB<td>2023/10/2 下午 02:06:20<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake09.avif"  />
+		
+		
+		<a href="cake09.avif"><img src="/~img43"> cake09.avif</a>
+		
+		
+<td>138.1 KB<td>2023/10/2 下午 02:07:24<td>5
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake10.avif"  />
+		
+		
+		<a href="cake10.avif"><img src="/~img43"> cake10.avif</a>
+		
+		
+<td>102.4 KB<td>2023/10/2 下午 02:07:37<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake11.avif"  />
+		
+		
+		<a href="cake11.avif"><img src="/~img43"> cake11.avif</a>
+		
+		
+<td>147.0 KB<td>2023/10/2 下午 02:07:53<td>5
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cake12.avif"  />
+		
+		
+		<a href="cake12.avif"><img src="/~img43"> cake12.avif</a>
+		
+		
+<td>53.3 KB<td>2023/10/2 下午 02:08:08<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cake13.avif"  />
+		
+		
+		<a href="cake13.avif"><img src="/~img43"> cake13.avif</a>
+		
+		
+<td>111.0 KB<td>2023/10/2 下午 02:08:22<td>5
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cat01.avif"  />
+		
+		
+		<a href="cat01.avif"><img src="/~img43"> cat01.avif</a>
+		
+		
+<td>73.0 KB<td>2024/2/2 下午 01:28:59<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cat02.avif"  />
+		
+		
+		<a href="cat02.avif"><img src="/~img43"> cat02.avif</a>
+		
+		
+<td>71.1 KB<td>2024/2/2 下午 01:34:02<td>5
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cat03.avif"  />
+		
+		
+		<a href="cat03.avif"><img src="/~img43"> cat03.avif</a>
+		
+		
+<td>125.8 KB<td>2024/2/2 下午 01:34:11<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="cat04.avif"  />
+		
+		
+		<a href="cat04.avif"><img src="/~img43"> cat04.avif</a>
+		
+		
+<td>41.0 KB<td>2024/2/2 下午 01:34:25<td>4
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="cat05.avif"  />
+		
+		
+		<a href="cat05.avif"><img src="/~img43"> cat05.avif</a>
+		
+		
+<td>152.7 KB<td>2024/2/2 下午 01:34:36<td>5
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape01.avif"  />
+		
+		
+		<a href="landscape01.avif"><img src="/~img43"> landscape01.avif</a>
+		
+		
+<td>552.7 KB<td>2023/9/18 下午 02:12:20<td>16
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape02.avif"  />
+		
+		
+		<a href="landscape02.avif"><img src="/~img43"> landscape02.avif</a>
+		
+		
+<td>39.5 KB<td>2023/9/18 下午 03:35:07<td>16
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape025.avif"  />
+		
+		
+		<a href="landscape025.avif"><img src="/~img43"> landscape025.avif</a>
+		
+		
+<td>550.8 KB<td>2023/9/18 下午 02:12:31<td>15
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape03.avif"  />
+		
+		
+		<a href="landscape03.avif"><img src="/~img43"> landscape03.avif</a>
+		
+		
+<td>89.6 KB<td>2023/9/18 下午 02:12:41<td>15
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape04.avif"  />
+		
+		
+		<a href="landscape04.avif"><img src="/~img43"> landscape04.avif</a>
+		
+		
+<td>128.7 KB<td>2023/9/18 下午 02:12:50<td>19
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape05.avif"  />
+		
+		
+		<a href="landscape05.avif"><img src="/~img43"> landscape05.avif</a>
+		
+		
+<td>122.0 KB<td>2023/9/18 下午 03:35:31<td>15
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape06.avif"  />
+		
+		
+		<a href="landscape06.avif"><img src="/~img43"> landscape06.avif</a>
+		
+		
+<td>200.6 KB<td>2023/9/18 下午 03:35:45<td>6
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape07.avif"  />
+		
+		
+		<a href="landscape07.avif"><img src="/~img43"> landscape07.avif</a>
+		
+		
+<td>334.5 KB<td>2023/9/18 下午 03:35:54<td>15
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape08.avif"  />
+		
+		
+		<a href="landscape08.avif"><img src="/~img43"> landscape08.avif</a>
+		
+		
+<td>211.9 KB<td>2023/9/18 下午 03:36:06<td>15
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape09.avif"  />
+		
+		
+		<a href="landscape09.avif"><img src="/~img43"> landscape09.avif</a>
+		
+		
+<td>248.3 KB<td>2023/9/18 下午 03:36:18<td>16
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape10.avif"  />
+		
+		
+		<a href="landscape10.avif"><img src="/~img43"> landscape10.avif</a>
+		
+		
+<td>77.3 KB<td>2023/9/18 下午 03:36:27<td>14
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="landscape11.avif"  />
+		
+		
+		<a href="landscape11.avif"><img src="/~img43"> landscape11.avif</a>
+		
+		
+<td>96.4 KB<td>2023/9/18 下午 03:36:38<td>17
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="user01.avif"  />
+		
+		
+		<a href="user01.avif"><img src="/~img43"> user01.avif</a>
+		
+		
+<td>141.5 KB<td>2024/3/25 下午 02:19:51<td>6
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="user02.avif"  />
+		
+		
+		<a href="user02.avif"><img src="/~img43"> user02.avif</a>
+		
+		
+<td>73.8 KB<td>2024/3/25 下午 02:20:02<td>3
+	<tr class='even'><td>
+        <input type='checkbox' class='selector' name='selection' value="user03.avif"  />
+		
+		
+		<a href="user03.avif"><img src="/~img43"> user03.avif</a>
+		
+		
+<td>165.6 KB<td>2024/4/15 上午 09:18:35<td>1
+	<tr class=''><td>
+        <input type='checkbox' class='selector' name='selection' value="user04.avif"  />
+		
+		
+		<a href="user04.avif"><img src="/~img43"> user04.avif</a>
+		
+		
+<td>51.2 KB<td>2024/4/15 上午 09:49:23<td>0
+
+            </table>
+        </form>
+	
+</div>
+
+</body>
+</html>
+<!-- Build-time: 0.037 -->
