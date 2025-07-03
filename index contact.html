@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Francisco Travel Rentals</title>
+    <meta name="description" content="Compare travel rentals in San Francisco, save favorites, and contact us.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/myall.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        :root {
+            --primary-blue: #4682B4;
+            /* --light-gray: #F0F0F0; */
+            --dark-gray: #333;
+        }
+
+        body {
+            font-family: "Caveat", cursive;
+            background-color:#034b61;
+            color: var(--dark-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .rental-list {
+            margin-bottom: 2rem;
+        }
+
+        .rental-item {
+            background: wheat;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .rental-item img {
+            width: 200px;
+            margin: 20px 0;
+            border-radius: 5px;
+            transition: all 0.5s ease-in-out;
+            box-shadow: 0 10px 0px rgba(0,0,0,0.2);
+            
+        }
+        
+        .rental-item img:hover{
+            opacity: 0.8;
+            transform: scale(1.25);
+            filter: brightness(1.1) saturate(1.2);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    
+        }
+        .rental-item h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .rental-item button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .rental-item button:hover {
+            background: #355e8b;
+        }
+
+        .rental-content {
+            flex: 1;
+        }
+
+        .contact-form {
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+            padding: 1rem;
+            border-radius: 5px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-form button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #355e8b;
+        }
+
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 0.5rem;
+            }
+
+            .rental-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .rental-item img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text-warning wow animate__flash"data-wow-duration="2s" data-wow-delay="0s"data-wow-iteration="1">San Francisco Travel Rentals</h1>
+        <nav>
+            <ul>
+                <li><a href="index home.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                <li><a href="index about.html"><i class="fa-solid fa-info-circle"></i> About</a></li>
+                <li><a href="index login.html"><i class="fa-solid fa-user"></i> Login</a></li>
+                <li><a href="index contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="rental-list">
+            <h2 class="text-light">Rentals</h2>
+            <div id="rentalList"></div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>San Francisco Travel Rentals © 2025</p>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    </footer>
+
+    <script>
+        
+        const rentals = [
+            { 
+                id: 1, 
+                name: 'Surfboard', 
+                price: 20, 
+                description: 'Ideal for coastal adventures.', 
+                image: 'https://media.istockphoto.com/id/91051776/photo/surfing.webp?a=1&b=1&s=612x612&w=0&k=20&c=caTWtscgQhXO9mILV1H1kBZeUiEhe_YX04dqfgcwLAE=' 
+            },
+            { 
+                id: 2, 
+                name: 'Car', 
+                price: 50, 
+                description: 'Explore San Francisco with ease.', 
+                image: 'https://media.istockphoto.com/id/171296740/photo/san-francisco-golden-gate-bridge-from-a-running-car.webp?a=1&b=1&s=612x612&w=0&k=20&c=sNpv2zCc-UicRutJiryw7gKATonwFRvpcYsTGZa6_VU=' 
+            },
+            { 
+                id: 3, 
+                name: 'Tent', 
+                price: 15, 
+                description: 'Perfect for camping.', 
+                image: 'https://images.unsplash.com/photo-1504851149312-7a075b496cc7' 
+            }
+        ];
+
+        // Favorites array (in-memory, reset on page reload)
+        let favorites = [];
+
+        // Check if localStorage has favorites (optional persistence)
+        if (localStorage.getItem('favorites')) {
+            favorites = localStorage.getItem('favorites').split(',').map(Number);
+        }
+
+        // Display rentals
+        function displayRentals() {
+            const list = document.getElementById('rentalList');
+            list.innerHTML = '';
+            rentals.forEach(rental => {
+                const isFavorite = favorites.includes(rental.id);
+                const item = document.createElement('div');
+                item.className = 'rental-item';
+                item.innerHTML = `
+                    <img src="${rental.image}" alt="${rental.name}">
+                    <div class="rental-content">
+                        <h3>${rental.name}</h3>
+                        <p>${rental.description}</p>
+                        <p>$${rental.price}/day</p>
+                        <button onclick="toggleFavorite(${rental.id})">
+                            ${isFavorite ? 'Remove Favorite' : 'Add to Favorites'}
+                        </button>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        // Toggle favorite status
+        function toggleFavorite(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(fav => fav !== id);
+            } else {
+                favorites.push(id);
+            }
+            // Store favorites as a comma-separated string (no JSON)
+            localStorage.setItem('favorites', favorites.join(','));
+            displayRentals();
+        }
+
+        // Form validation and submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Message sent!');
+                this.reset();
+            } else {
+                alert('Please fill all fields.');
+            }
+        });
+
+        // Initial render
+        displayRentals();
+    </script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/jquery-3.7.1.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</body>
+</html>

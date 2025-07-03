@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>San Francisco Travel Guide</title>
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/myall.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Caveat", cursive;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    .hero {
+      height: 90vh;
+      background: url("Pictures/san francisco01.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 3rem;
+      border-radius: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero .btn {
+      padding: 1rem 2rem;
+      background: #ff6347;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      display: inline-block;
+    }
+
+    .services {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: wheat;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    /* .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #f1f1f1;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin: 1rem 0 0.5rem;
+      color: #0077cc;
+    } */
+    .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+      margin: 1rem 0 0.5rem;
+      color: #0077cc;
+    } */
+/* 文字內容區 */
+.card-content {
+  position: relative;
+  padding: 20px;
+  color: #333;
+  background-color: white;
+  height: 100%;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+/* 圖片區 */
+.card-image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* 滑鼠移入時，文字隱藏，圖片顯示 */
+.card:hover .card-content {
+  opacity: 0;
+}
+
+.card:hover .card-image {
+  opacity: 1;
+}
+
+
+    /* 以下是 flats list 專用樣式 */
+    #flatsSection {
+      background: linear-gradient(135deg, #6699ff 0%, #ff9966 100%);
+      padding: 40px 20px;
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    #flatsSection h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #flatsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    #flatsContainer .flat-card {
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 15px;
+      padding: 15px;
+      width: 280px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    #flatsContainer .flat-card:hover {
+      transform: scale(1.05);
+    }
+
+    #flatsContainer .flat-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      object-fit: cover;
+      height: 180px;
+    }
+
+    #flatsContainer .flat-card h3 {
+      margin: 0 0 8px 0;
+    }
+
+    #flatsContainer .flat-card p {
+      margin: 4px 0;
+    }
+
+    .fav-btn {
+      margin-top: auto;
+      cursor: pointer;
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .fav-btn.favorited {
+      background-color: #ffcc00;
+      border-color: #ffcc00;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      #flatsContainer .flat-card {
+        width: 90%;
+      }
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer-content img {
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Flats data
+      let flats = JSON.parse(localStorage.getItem('flats')) || [
+        {
+          id: 'flat1',
+          name: 'Sunny Flat Downtown',
+          price: 1500,
+          beds: 2,
+          imageUrl: 'https://picsum.photos/id/1018/400/300',
+          description: '2 bedrooms, 1 living room, close to MRT, lots of sunlight'
+        },
+        {
+          id: 'flat2',
+          name: 'Cozy Studio',
+          price: 900,
+          beds: 1,
+          imageUrl: 'https://picsum.photos/id/1015/400/300',
+          description: 'Single studio, fully equipped, quiet and safe'
+        }
+      ];
+
+      const container = document.getElementById('flatsContainer');
+
+      function renderFlats() {
+        container.innerHTML = '';
+        flats.forEach(flat => {
+          const isFav = localStorage.getItem('fav-' + flat.id) === 'true';
+          const card = document.createElement('div');
+          card.className = 'flat-card';
+          card.innerHTML = `
+            <img src="${flat.imageUrl}" alt="${flat.name}" />
+            <h3>${flat.name}</h3>
+            <p>Price: $${flat.price} / month</p>
+            <p>Bedrooms: ${flat.beds}</p>
+            <p>${flat.description}</p>
+            <button class="fav-btn ${isFav ? 'favorited' : ''}">
+              ${isFav ? '★ Favorited' : '☆ Favorite'}
+            </button>
+          `;
+          const favBtn = card.querySelector('.fav-btn');
+          favBtn.addEventListener('click', () => {
+            if(localStorage.getItem('fav-' + flat.id) === 'true') {
+              localStorage.removeItem('fav-' + flat.id);
+              favBtn.classList.remove('favorited');
+              favBtn.textContent = '☆ Favorite';
+            } else {
+              localStorage.setItem('fav-' + flat.id, 'true');
+              favBtn.classList.add('favorited');
+              favBtn.textContent = '★ Favorited';
+            }
+          });
+          container.appendChild(card);
+        });
+      }
+
+      renderFlats();
+    });
+  </script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.7.1.min.js"></script>
+   <script src="js/wow.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="Pictures/sf logo.jpg" alt="San Francisco Logo" />
+        <h1 class="text-warning wow animate__fadeInRight" data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="1">San Francisco Travel Guide</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index home.html"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+          <li><a href="index about.html"><i class="fa-solid fa-location-dot"></i> About</a></li>
+          <li><a href="#services"><i class="fa-solid fa-umbrella-beach"></i> Services</a></li>
+          <li><a href="#flatsSection"><i class="fa-solid fa-building"></i> Flats</a></li>
+          <li><a href="index contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+          <li><a href="index login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="overlay">
+      <h2>Welcome to San Francisco</h2>
+      <p>Discover the best spots and experiences in the city.</p>
+      <a href="#services" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <h3>City Tours</h3>
+          <p>Explore iconic landmarks and hidden gems<br> with expert guides.</p>
+        </div>
+        <div class="card-image" style="background-image: url(Pictures/sausalito.jpg);"></div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Food & Drink</h3>
+          <p>Savor delicious cuisine from world-renowned restaurants and local favorites.</p>
+        </div>
+        <div class="card-image" style="background-image: url(Pictures/blue\ bottle.avif);"></div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Event Planning</h3>
+          <p>Make your trip unforgettable with personalized event planning services.</p>
+        </div>
+        <div class="card-image" style="background-image: url('Pictures/event.webp');"></div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Flats list section -->
+  <section id="flatsSection">
+    <h2>Available Flats for Rent</h2>
+    <div id="flatsContainer">
+      <!-- Flats cards will be inserted here by JS -->
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <img src="Pictures/sf logo.jpg" alt="San Francisco Logo" />
+      <p>Contact us: info@sftravelguide.com | +1 415 555 1234</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

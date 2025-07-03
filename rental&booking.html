@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Francisco Rentals & Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/myall.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body{
+      background-color: wheat;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-plane wow animate__backInLeft" data-wow-duration="3s" data-wow-delay="0s" data-wow-iteration="2"></i>San Francisco Travel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="rentals.html">Rentals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Rentals Section -->
+  <div class="container mt-5" id="rentals">
+    <h2>🏠 San Francisco Rentals</h2>
+    <p>Discover the best rental options for your stay in San Francisco!</p>
+    <ul>
+      <li><strong class="text-primary">Downtown Loft:</strong> A modern space in the heart of SF - $200/night</li>
+      <li><strong class="text-info">Cozy Mission Apartment:</strong> Perfect for couples - $150/night</li>
+      <li><strong class="text-success">Luxury Marina Condo:</strong> Waterfront views and elegant design - $350/night</li>
+    </ul>
+  </div>
+
+  <!-- Booking Form Section -->
+  <div class="container mt-5" id="booking">
+    <h2>✈️📋 Travel Booking Form</h2>
+    <form id="bookingForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Full Name</label>
+        <input type="text" class="form-control is-invalid" id="username" name="username" placeholder="Enter your name">
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter your name!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control is-invalid" id="email" name="email" placeholder="Enter your email">
+        <div class="valid-feedback">Valid email!</div>
+        <div class="invalid-feedback">Please enter a valid email!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="guests" class="form-label">Number of Guests</label>
+        <input type="number" class="form-control is-invalid" id="guests" name="guests" min="1" value="1">
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid number of guests!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="roomtype" class="form-label">Room Type</label>
+        <select name="roomtype" id="roomtype" class="form-select">
+          <option value="Single Room">Single Room</option>
+          <option value="Double Room">Double Room</option>
+          <option value="Family Room">Family Room</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="extras" class="form-label">Add-ons</label>
+        <input type="text" class="form-control is-invalid" id="extras" name="extras" list="extra_list" placeholder="Up to 10 characters">
+        <datalist id="extra_list">
+          <option value="Breakfast"></option>
+          <option value="Airport Shuttle"></option>
+          <option value="Tour Guide"></option>
+        </datalist>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter valid add-ons!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Travel Preferences</label><br>
+        <input type="checkbox" name="interest" value="Beach">Beach
+        <input type="checkbox" name="interest" value="Hiking">Hiking
+        <input type="checkbox" name="interest" value="Shopping">Shopping
+        <input type="checkbox" name="interest" value="Food">Food
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Budget Range</label><br>
+        <input type="radio" name="budget" value="Under $1000">Under $1000
+        <input type="radio" name="budget" value="$1000-$3000">$1000-$3000
+        <input type="radio" name="budget" value="Above $3000">Above $3000
+      </div>
+
+      <div class="mb-3">
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">I have read and agree to the booking terms</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="showmsg" class="mt-4"></div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    let flag_username = false, flag_email = false, flag_guests = false;
+  
+    $("#username").on("input", function () {
+      flag_username = $(this).val().length >= 2;
+      $(this).toggleClass("is-valid", flag_username).toggleClass("is-invalid", !flag_username);
+    });
+  
+    $("#email").on("input", function () {
+      const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      flag_email = pattern.test($(this).val());
+      $(this).toggleClass("is-valid", flag_email).toggleClass("is-invalid", !flag_email);
+    });
+  
+    $("#guests").on("input", function () {
+      flag_guests = $(this).val() > 0;
+      $(this).toggleClass("is-valid", flag_guests).toggleClass("is-invalid", !flag_guests);
+    });
+  
+    $("#bookingForm").submit(function (e) {
+      e.preventDefault();
+  
+      if (!(flag_username && flag_email && flag_guests)) {
+        alert("Please fill in all required fields correctly.");
+        return;
+      }
+  
+      const name = $("#username").val();
+      const email = $("#email").val();
+      const guests = $("#guests").val();
+      const roomType = $("#roomtype").val();
+      const extras = $("#extras").val();
+  
+      const interest = [];
+      $("input[name='interest']:checked").each(function () {
+        interest.push($(this).val());
+      });
+  
+      const budget = $("input[name='budget']:checked").val();
+  
+      // thank you message
+      alert(`Thank you, ${name}! Your booking is submitted.`);
+  
+      // remove item
+      $("#bookingForm")[0].reset();
+  
+      // remove Bootstrap 
+      $("#bookingForm .form-control").removeClass("is-valid is-invalid");
+  
+      // remove result
+      $("#showmsg").empty();
+    });
+  </script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
+</body>
+
+</html>

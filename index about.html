@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>San Francisco Travel Site</title>
+  <meta name="description" content="Travel rental services in San Francisco: surfboards, cars, tents, and more." />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 3 CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <!-- Animate.css -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+
+  <!-- WOW.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    body {
+      font-family: "Caveat", cursive;
+      background-color:wheat;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #006494, #00a6fb);
+      color: white;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    header .logo img {
+      max-height: 60px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-family:"Caveat", cursive;
+      font-size: 3rem;
+      color: #e0f2f1;
+      margin-bottom: 10px;
+    }
+
+    /* Navbar */
+    .navbar-default {
+      background-color: #006494;
+      border-color: transparent;
+      margin-bottom: 0;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+      color: white;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+      color: #ff6f61;
+      background-color: transparent;
+      text-decoration: underline;
+      text-align: center;
+    }
+    
+    .navbar-collapse {
+  text-align: center; 
+}
+
+.navbar-collapse ul.navbar-nav {
+  float: none;          
+  display: inline-block;
+}
+
+.navbar-collapse ul.navbar-nav > li {
+  float: left; 
+}
+
+.navbar-collapse ul.navbar-nav > li > a {
+  text-align: center; 
+}
+.card-img-top {
+  width: 100%;          /* 撐滿卡片寬度 */
+  height: 200px;        /* 固定高度 */
+  object-fit: cover;    /* 讓圖片裁剪並保持比例 */
+}
+
+    /* Carousel */
+    /* .carousel-inner > .item img {
+      margin: auto;
+      max-height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      width: auto;
+      max-width: 100%;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.65);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 90%;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    } */
+
+    .container h2 {
+      margin: 40px 0 20px;
+      text-align: center;
+      font-family: "Caveat", cursive;
+      color: #006494;
+      font-size: 2.5rem;
+    }
+
+    /* Button */
+    .btn-warning {
+      background-color: #ff6f61;
+      border: none;
+      margin-top: 20px;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-warning:hover {
+      background-color: #e64a19;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #263238;
+      color: #ccc;
+      padding: 30px 15px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer .logo img {
+      max-height: 50px;
+      margin-bottom: 10px;
+    }
+
+    footer nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    footer nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer nav ul li a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    footer .links a img {
+      height: 28px;
+      margin: 0 10px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+    }
+
+    footer .links a:hover img {
+      filter: brightness(1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .carousel-inner > .item img {
+        max-height: 250px;
+      }
+      .container h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Map container */
+    .map-container {
+      max-width: 800px;
+      height: 400px;
+      margin: 40px auto 60px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Rental selection */
+    .rental-options {
+      max-width: 600px;
+      margin: 40px auto 60px;
+      text-align: center;
+    }
+
+    .rental-options button {
+      margin: 5px 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background-color: #006494;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .rental-options button:hover {
+      background-color: #004a6e;
+    }
+
+    .rental-options p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #006494;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo wow animate__animated animate__heartBeat" data-wow-duration="2s">
+      <img src="./Pictures/san francisco.webp" alt="San Francisco Logo" />
+      <h1>San Francisco, California</h1>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Navbar header for mobile -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarMenu"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar" style="background-color:white;"></span>
+          <span class="icon-bar" style="background-color:white;"></span>
+          <span class="icon-bar" style="background-color:white;"></span>
+        </button>
+      </div>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse " id="navbarMenu">
+        <ul class="nav navbar-nav navbar-center ">
+          <li><a href="index home.html"><i class="fa-solid fa-chalkboard-user"></i> Home</a></li>
+          <li><a href="index about.html"><i class="fa-solid fa-house-user"></i> About</a></li>
+          <li><a href="index login.html"><i class="fa-regular fa-address-card"></i> Login</a></li>
+          <li><a href="index contact.html"><i class="fa-brands fa-telegram"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content container -->
+  <div class="container">
+
+    <!-- About Us Title -->
+    <h2>About Us</h2>
+      
+          <!-- Downtown Apartment -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="Pictures/downtown apartment.avif" class="card-img-top" alt="Downtown Apartment">
+              <div class="card-body">
+                <h5 class="card-title">Downtown Apartment</h5>
+                <p class="card-text">Modern and cozy apartment located in the heart of San Francisco with stunning city views.</p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#rentalModal1">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal 1 -->
+          <div class="modal fade" id="rentalModal1" tabindex="-1" role="dialog" aria-labelledby="rentalModalLabel1">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Downtown Apartment</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <img src="Pictures/downtown apartment.avif" class="img-fluid rounded mb-3" alt="Downtown Apartment">
+                  <p><strong>Price:</strong> $180/night</p>
+                  <p><strong>Available from:</strong> June 1, 2025</p>
+                  <p><strong>Description:</strong> Located in downtown San Francisco, this modern and cozy apartment offers breathtaking city views, perfect for short-term stays or travelers.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="alert('Thank you for your booking!')">Book Now</button>
+
+                  <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Bay Area Condo -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="Pictures/bay area condo.webp" class="card-img-top" alt="Bay Area Condo">
+              <div class="card-body">
+                <h5 class="card-title">Bay Area Condo</h5>
+                <p class="card-text">Spacious condo near the bay, perfect for families and close to public transit.</p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#rentalModal2">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal 2 -->
+          <div class="modal fade" id="rentalModal2" tabindex="-1" role="dialog" aria-labelledby="rentalModalLabel2">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Bay Area Condo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <img src="Pictures/bay area condo.webp" class="img-fluid rounded mb-3" alt="Bay Area Condo">
+                  <p><strong>Price:</strong> $220/night</p>
+                  <p><strong>Available from:</strong> June 10, 2025</p>
+                  <p><strong>Description:</strong> Located near the bay, this spacious condo is family-friendly and conveniently close to public transportation.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="alert('Thank you for your booking!')">Book Now</button>
+
+                  <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Mission District Loft -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="Pictures/mission district loft.avif" class="card-img-top" alt="Mission District Loft">
+              <div class="card-body">
+                <h5 class="card-title">Mission District Loft</h5>
+                <p class="card-text">Chic loft in the vibrant Mission District with easy access to cafes and nightlife.</p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#rentalModal3">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal 3 -->
+          <div class="modal fade" id="rentalModal3" tabindex="-1" role="dialog" aria-labelledby="rentalModalLabel3">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Mission District Loft</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <img src="Pictures/mission district loft.avif" class="img-fluid rounded mb-3" alt="Mission District Loft">
+                  <p><strong>Price:</strong> $200/night</p>
+                  <p><strong>Available from:</strong> June 5, 2025</p>
+                  <p><strong>Description:</strong> Stylish loft located in the lively Mission District with easy access to local cafes and nightlife spots.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="alert('Thank you for your booking!')">Book Now</button>
+
+                  <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- House with Garden -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="Pictures/house with garden.webp" class="card-img-top" alt="House with Garden">
+              <div class="card-body">
+                <h5 class="card-title">House with Garden</h5>
+                <p class="card-text">Comfortable house featuring a private garden, perfect for relaxing after a day of sightseeing.</p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#rentalModal4">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal 4 -->
+          <div class="modal fade" id="rentalModal4" tabindex="-1" role="dialog" aria-labelledby="rentalModalLabel4">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">House with Garden</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <img src="Pictures/house with garden.webp" class="img-fluid rounded mb-3" alt="House with Garden">
+                  <p><strong>Price:</strong> $250/night</p>
+                  <p><strong>Available from:</strong> June 15, 2025</p>
+                  <p><strong>Description:</strong> Cozy house with a private garden, ideal for relaxing after a day of sightseeing.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="alert('Thank you for your booking!')">Book Now</button>
+
+                  <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Sunny Balcony Rental -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="Pictures/sunny balcony.webp" class="card-img-top" alt="Sunny Balcony Rental">
+              <div class="card-body">
+                <h5 class="card-title">Sunny Balcony Rental</h5>
+                <p class="card-text">Bright apartment with a sunny balcony offering breathtaking views of the Golden Gate Bridge.</p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#rentalModal5">View Details</button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal 5 -->
+          <div class="modal fade" id="rentalModal5" tabindex="-1" role="dialog" aria-labelledby="rentalModalLabel5">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Sunny Balcony Rental</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <img src="Pictures/sunny balcony.webp" class="img-fluid rounded mb-3" alt="Sunny Balcony Rental">
+                  <p><strong>Price:</strong> $195/night</p>
+                  <p><strong>Available from:</strong> June 8, 2025</p>
+                  <p><strong>Description:</strong> Bright apartment with a sunny balcony offering breathtaking views of the Golden Gate Bridge.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="alert('Thank you for your booking!')">Book Now</button>
+
+                  <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+
+    <!-- Explore More Button -->
+    <div class="text-center">
+      <a href="#" class="btn btn-warning btn-lg wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+        Explore More
+      </a>
+    </div>
+
+    <!-- Google Map Embed -->
+    <h2 style="text-align: center;">Where to Find Us</h2>
+
+    <div class="map-container wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0195471226656!2d-122.47825558468108!3d37.81992817975148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858187b5e4a7ed%3A0x59b4c7df617ef846!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1616459493745!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- Rental Options Interaction -->
+    <div class="rental-options wow animate__animated animate__fadeIn" data-wow-delay="1s">
+      <h3>Choose your rental items:</h3>
+      <button onclick="addItem('Surfboard')">Surfboard</button>
+      <button onclick="addItem('Car')">Car</button>
+      <button onclick="addItem('Tent')">Tent</button>
+      <p>Your selection: <span id="selection">None</span></p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">
+      <img src="./Pictures/san francisco.webp" alt="San Francisco Logo" />
+      <p>San Francisco Travel Rentals</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="links">
+      <a href="#"><img src="./Icons/facebook.svg" alt="facebook" /></a>
+      <a href="#"><img src="./Icons/instagram.svg" alt="instagram" /></a>
+      <a href="#"><img src="./Icons/twitter.svg" alt="twitter" /></a>
+      <a href="#"><img src="./Icons/youtube.svg" alt="youtube" /></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script>
+    new WOW().init();
+
+    // Rental selection logic
+    const selectionSet = new Set();
+
+    function addItem(item) {
+      selectionSet.add(item);
+      const display = selectionSet.size > 0 ? Array.from(selectionSet).join(', ') : 'None';
+      document.getElementById('selection').textContent = display;
+    }
+
+  </script>

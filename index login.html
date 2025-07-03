@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>San Francisco Travel Rentals | Easy City Adventures</title>
+  <meta name="description" content="Rent bikes, scooters, cars, and more in San Francisco. Perfect for exploring the Golden Gate Bridge, Fisherman's Wharf, and beyond."/>
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Fonts and Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="CSS/bootstrap.min.css"/>
+  <link rel="stylesheet" href="CSS/myall.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+    body {
+      font-family: "Caveat", cursive;
+      background-color:#d5d2c1;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .logo img {
+      height: 60px;
+    }
+    .myimg {
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      height: 250px;
+      width: 300px;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .myimg:hover {
+      opacity: 0.8;
+      transform: scale(1.25);
+      filter: brightness(1.1) saturate(1.2);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+    .timeline-section {
+      position: relative;
+    }
+    .timeline-section::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 15px;
+      width: 5px;
+      background-color: #ebbfbf;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .timeline-section-pointer {
+      position: relative;
+    }
+    .timeline-section-pointer::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      width: 25px;
+      height: 25px;
+      background-color: #fcfcfc;
+      border: 8px solid #691b1b;
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    footer {
+      background-color: wheat;
+      padding: 20px;
+      text-align: center;
+    }
+    .links img {
+      width: 30px;
+      margin: 0 10px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    @media screen and (max-width: 768px) {
+      .timeline-section::before {
+        left: -6px;
+        transform: none;
+        width: 5px;
+      }
+      .timeline-section-pointer::before {
+        left: -2px;
+        transform: none;
+        width: 20px;
+        height: 20px;
+        border: 7px solid #691b1b;
+        top: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="container py-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logo d-flex align-items-center gap-2">
+        <img src="Pictures/san francisco.webp" alt="Logo">
+        <h1 class="text-primary wow animate__fadeInLeft" data-wow-duration="2s">SF Travel Rentals</h1>
+      </div>
+      <nav>
+        <ul class="d-flex">
+          <li><a href="index home.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="index about.html"><i class="fas fa-info-circle"></i> About</a></li>
+          <li><a href="index login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+          <li><a href="index contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Form -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Login to Explore San Francisco</h2>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required/>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required/>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="container my-5">
+    <div class="timeline-section">
+      <!-- Block 1 -->
+      <div class="row mb-4 align-items-center timeline-section-pointer">
+        <div class="col-md-6">
+          <h3 class="text-warning bg-success">Ride Across the Golden Gate</h3>
+          <p>Rent bikes and e-scooters for a smooth ride through the most iconic bridge in the world.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="myimg" style="background-image: url('Pictures/goldengate bridge.webp');"></div>
+        </div>
+      </div>
+
+      <!-- Block 2 -->
+      <div class="row mb-4 align-items-center flex-row-reverse timeline-section-pointer">
+        <div class="col-md-6">
+          <h3 class="text-warning bg-success">Explore Fisherman's Wharf</h3>
+          <p>Book walking tours, rent scooters, or hop on a Segway to explore the waterfront and local markets.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="myimg" style="background-image: url('Pictures/fishermans wharf.webp');"></div>
+        </div>
+      </div>
+
+      <!-- Block 3 -->
+      <div class="row mb-4 align-items-center timeline-section-pointer">
+        <div class="col-md-6">
+          <h3 class="text-warning bg-success">Charming Cable Cars</h3>
+          <p>Discover routes and schedules or rent your own guide to explore Chinatown and Lombard Street.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="myimg" style="background-image: url('Pictures/Fisherman\'s Wharf .webp');"></div>
+        </div>
+      </div>
+
+      <!-- Block 4 -->
+      <div class="row mb-4 align-items-center flex-row-reverse timeline-section-pointer">
+        <div class="col-md-6">
+          <h3 class="text-warning bg-success">Lombard Street</h3>
+          <p>San Francisco is famous for its steep, winding eight sharp turns lined with colorful flowers, making it a popular spot for photos and sightseeing.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="myimg" style="background-image: url('Pictures/Lombard Street .webp');"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo mb-2">
+      <img src="Pictures/san-francisco-logo.webp" alt="Logo"/>
+      <p>© 2025 San Francisco Travel Rentals</p>
+    </div>
+    <nav>
+      <ul class="d-flex justify-content-center">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rentals</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="links mt-3">
+      <a href="#"><img src="Icons/facebook.svg" alt="facebook"/></a>
+      <a href="#"><img src="Icons/instagram.svg" alt="instagram"/></a>
+      <a href="#"><img src="Icons/twitter.svg" alt="twitter"/></a>
+      <a href="#"><img src="Icons/youtube.svg" alt="youtube"/></a>
+    </section>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+
+    // Login functionality with localStorage
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username && password) {
+        localStorage.setItem("username", username);
+        alert("Welcome back, " + username + "!");
+        window.location.href = "rental&booking.html";
+      } else {
+        alert("Please fill in both fields.");
+      }
+    });
+  </script>
+</body>
+</html>
